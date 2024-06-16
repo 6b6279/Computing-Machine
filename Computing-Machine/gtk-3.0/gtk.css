@@ -14,7 +14,7 @@ color definitions
 @define-color theme_text_color #000000;
 
 @define-color theme_selected_bg_color #547faa;
-@define-color theme_selected_fg_color #ffffff; /* also sets the text color of XFCE's desktop icons */ 
+@define-color theme_selected_fg_color #ffffff; /* also sets the text color of XFCE's desktop icons */
 
 @define-color theme_tooltip_bg_color #ffff7f;
 @define-color theme_tooltip_fg_color #000000;
@@ -78,6 +78,7 @@ base states
 * {
 	background-color: inherit;
 	color: inherit;
+  -gtk-icon-style: regular; /* don't want any of that symbolic icons */
 }
 
 .background,
@@ -96,12 +97,9 @@ base states
 	background-color: shade(@theme_bg_color, 1.1);
 	color: @theme_fg_color;
 }
-
 .gtkstyle-fallback:hover,
 :hover {
-	-gtk-icon-effect: highlight;
 }
-
 .gtkstyle-fallback:disabled {
 	background-color: shade(@theme_bg_color, 0.85);
 }
@@ -858,11 +856,13 @@ assistant .sidebar label.highlight {
 	color: @theme_selected_fg_color;
 }
 
+/*
 row:hover,
 iconview.view:hover {
 	background-color: shade(@theme_selected_bg_color, 1.1);
 	color: @theme_selected_fg_color;
 }
+*/
 
 .view:disabled,
 .view text:disabled,
